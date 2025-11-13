@@ -13,7 +13,7 @@ public class PokemonBaseService {
     public PokemonBaseService() {
     }
 
-    public PokemonBase getPokemonBaseById() {
+    public PokemonBase getPokemonBaseById(int id) {
         return null;
     }
 
@@ -29,6 +29,6 @@ public class PokemonBaseService {
         return null;
     }
 
-    public void deletePokemonBase() {
+    public void deletePokemonBaseById(int id) {
     }
 }

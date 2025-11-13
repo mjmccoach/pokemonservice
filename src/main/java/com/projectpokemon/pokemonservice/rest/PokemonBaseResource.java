@@ -5,7 +5,6 @@ import com.projectpokemon.pokemonservice.objects.UpdatePokemonBasePayload;
 import com.projectpokemon.pokemonservice.service.PokemonBaseService;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Collections;
 import java.util.List;
 
 @RestController("/pokemon/base")
@@ -18,8 +17,8 @@ public class PokemonBaseResource {
     }
 
     @GetMapping("/{id}")
-    public PokemonBase getPokemonBaseById() {
-        return pokemonBaseService.getPokemonBaseById();
+    public PokemonBase getPokemonBaseById(@PathVariable("id") int id) {
+        return pokemonBaseService.getPokemonBaseById(id);
     }
 
     @GetMapping("/all")
@@ -28,7 +27,7 @@ public class PokemonBaseResource {
     }
 
     @PutMapping("/{id}")
-    public PokemonBase updatePokemonBase(int id, UpdatePokemonBasePayload updatePokemonBasePayload) {
+    public PokemonBase updatePokemonBase(@PathVariable("id") int id, UpdatePokemonBasePayload updatePokemonBasePayload) {
         return pokemonBaseService.updatePokemonBase(id, updatePokemonBasePayload);
     }
 
@@ -38,7 +37,7 @@ public class PokemonBaseResource {
     }
 
     @DeleteMapping("/{id}")
-    public void deletePokemonBaseById() {
-        pokemonBaseService.deletePokemonBase();
+    public void deletePokemonBaseById(@PathVariable("id") int id) {
+        pokemonBaseService.deletePokemonBaseById(id);
     }
 }
