@@ -27,7 +27,7 @@ public class PokemonBaseResource {
     }
 
     @PutMapping("/{id}")
-    public PokemonBase updatePokemonBase(@PathVariable("id") int id, UpdatePokemonBasePayload updatePokemonBasePayload) {
+    public PokemonBase updatePokemonBase(@PathVariable("id") int id, @RequestBody UpdatePokemonBasePayload updatePokemonBasePayload) {
         return pokemonBaseService.updatePokemonBase(id, updatePokemonBasePayload);
     }
 

@@ -2,7 +2,9 @@ package com.projectpokemon.pokemonservice.enums;
 
 public enum PokemonType {
 
-    FIRE("fire");
+    FIRE("fire"),
+    GRASS("grass"),
+    WATER("water");
 
     private String value;
 
