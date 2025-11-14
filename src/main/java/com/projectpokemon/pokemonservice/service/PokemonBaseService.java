@@ -28,7 +28,7 @@ public class PokemonBaseService {
                 updatePokemonBasePayload.getPrimaryType(),
                 updatePokemonBasePayload.getSecondaryType(),
                 id);
-        return pokemonBaseDAO.getPokemonBaseById(id);
+        return getPokemonBaseById(id);
     }
 
     public PokemonBase createPokemonBase() {
