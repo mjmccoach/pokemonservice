@@ -13,7 +13,7 @@ public class PokemonBaseDAO {
 
     private static final String SELECT_BY_ID = "SELECT * from PokemonBase where id = ?";
     private static final String SELECT_ALL = "SELECT * from PokemonBase";
-    private static final String UPDATE = "UPDATE `Trainer` " +
+    private static final String UPDATE = "UPDATE `PokemonBase` " +
             "                             SET name = '%s' " +
             "                             primary_type = '%s' " +
             "                             secondary_type = '%s " +
@@ -37,7 +37,7 @@ public class PokemonBaseDAO {
     }
 
     public void updatePokemonBase(String name, PokemonType primaryType, PokemonType secondaryType, int id) {
-        jdbcTemplate.execute(String.format(UPDATE, name, primaryType, secondaryType, id));
+        jdbcTemplate.update(String.format(UPDATE, name, primaryType, secondaryType, id));
     }
 
     public void deletePokemonBaseById(int id) {
