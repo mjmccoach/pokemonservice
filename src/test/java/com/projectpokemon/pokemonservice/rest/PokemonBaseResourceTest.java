@@ -24,7 +24,7 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-public class PokemonBaseResourceTest {
+class PokemonBaseResourceTest {
 
     private static final int ID_1 = 1;
     private static final String NAME_1 = "Bulbasaur";
