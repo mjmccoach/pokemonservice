@@ -9,6 +9,7 @@ import lombok.Setter;
 @AllArgsConstructor
 public class TrainerPokemon {
     private int id;
+    private int trainerId;
     private int level;
     private String nickname;
     private PokemonBase pokemonBase;
