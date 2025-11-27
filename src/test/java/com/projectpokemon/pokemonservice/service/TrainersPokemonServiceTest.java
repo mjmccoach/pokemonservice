@@ -32,6 +32,8 @@ class TrainersPokemonServiceTest {
     private static final int POKEMON_2_ID = 5;
     private static final int LEVEL_30 = 30;
     private static final int LEVEL_18 = 18;
+    private static final String POKEMON_1_NAME = "Ivysaur";
+    private static final String POKEMON_2_NAME = "Charmeleon";
 
     @Mock
     TrainersPokemonDAO mockTrainersPokemonDAO;
@@ -48,8 +50,8 @@ class TrainersPokemonServiceTest {
     void setUp() {
         trainerPokemon1 = new TrainerPokemon(POKEMON_1_ID, TRAINER_ID, LEVEL_18, null, null);
         trainerPokemon2 = new TrainerPokemon(POKEMON_2_ID, TRAINER_ID, LEVEL_30, null, null);
-        pokemonBase1 = new PokemonBase(2, "Ivysaur", PokemonType.GRASS, null);
-        pokemonBase2 = new PokemonBase(5, "Charmeleon", PokemonType.FIRE, null);
+        pokemonBase1 = new PokemonBase(POKEMON_1_ID, POKEMON_1_NAME, PokemonType.GRASS, null);
+        pokemonBase2 = new PokemonBase(POKEMON_1_ID, POKEMON_2_NAME, PokemonType.FIRE, null);
     }
 
     @Test
@@ -64,17 +66,17 @@ class TrainersPokemonServiceTest {
 
         assertEquals(2, actual.size());
 
-        assertEquals(2, actual.getFirst().getId());
-        assertEquals(20, actual.getFirst().getTrainerId());
-        assertEquals(18, actual.getFirst().getLevel());
+        assertEquals(POKEMON_1_ID, actual.getFirst().getId());
+        assertEquals(TRAINER_ID, actual.getFirst().getTrainerId());
+        assertEquals(LEVEL_18, actual.getFirst().getLevel());
         assertNull(actual.getFirst().getNickname());
-        assertEquals("Ivysaur", actual.getFirst().getPokemonBase().getName());
+        assertEquals(POKEMON_1_NAME, actual.getFirst().getPokemonBase().getName());
 
         assertEquals(5, actual.get(1).getId());
         assertEquals(20, actual.get(1).getTrainerId());
         assertEquals(30, actual.get(1).getLevel());
         assertNull(actual.get(1).getNickname());
-        assertEquals("Charmeleon", actual.get(1).getPokemonBase().getName());
+        assertEquals(POKEMON_2_NAME, actual.get(1).getPokemonBase().getName());
     }
 
     @Test
