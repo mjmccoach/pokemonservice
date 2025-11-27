@@ -1,6 +1,7 @@
 package com.projectpokemon.pokemonservice.service;
 
 import com.projectpokemon.pokemonservice.objects.TrainerPokemon;
+import com.projectpokemon.pokemonservice.persistence.PokemonBaseDAO;
 import com.projectpokemon.pokemonservice.persistence.TrainersPokemonDAO;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -12,9 +13,12 @@ import java.util.List;
 public class TrainersPokemonService {
 
     private TrainersPokemonDAO trainersPokemonDAO;
+    private PokemonBaseDAO pokemonBaseDAO;
 
     public List<TrainerPokemon> getTrainersPokemonById(int trainerId) {
-        return trainersPokemonDAO.getTrainersPokemonById(trainerId);
+        List<TrainerPokemon> trainerPokemonList = trainersPokemonDAO.getTrainersPokemonById(trainerId);
+        setPokemonBases(trainerPokemonList);
+        return trainerPokemonList;
     }
 
     public void updateTrainersPokemonById(String nickname, int level, int pokemonId, int trainerId) {
@@ -23,5 +27,11 @@ public class TrainersPokemonService {
 
     public void deleteTrainersPokemonById(int pokemonId, int trainerId) {
         trainersPokemonDAO.deleteTrainersPokemonById(pokemonId, trainerId);
+    }
+
+    private void setPokemonBases(List<TrainerPokemon> trainerPokemonList) {
+        trainerPokemonList.forEach(pokemon -> {
+            pokemon.setPokemonBase(pokemonBaseDAO.getPokemonBaseById(pokemon.getId()));
+        });
     }
 }
