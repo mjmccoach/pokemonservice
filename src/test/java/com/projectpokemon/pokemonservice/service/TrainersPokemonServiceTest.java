@@ -57,8 +57,8 @@ class TrainersPokemonServiceTest {
     @Test
     void select_pokemon_by_trainer_id() {
         when(mockTrainersPokemonDAO.getTrainersPokemonById(anyInt())).thenReturn(Arrays.asList(trainerPokemon1, trainerPokemon2));
-        when(mockPokemonBaseDao.getPokemonBaseById(eq(2))).thenReturn(pokemonBase1);
-        when(mockPokemonBaseDao.getPokemonBaseById(eq(5))).thenReturn(pokemonBase2);
+        when(mockPokemonBaseDao.getPokemonBaseById(eq(POKEMON_1_ID))).thenReturn(pokemonBase1);
+        when(mockPokemonBaseDao.getPokemonBaseById(eq(POKEMON_2_ID))).thenReturn(pokemonBase2);
 
         List<TrainerPokemon> actual = trainersPokemonService.getTrainersPokemonById(TRAINER_ID);
 
