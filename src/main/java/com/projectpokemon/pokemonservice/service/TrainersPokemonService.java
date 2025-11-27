@@ -21,8 +21,9 @@ public class TrainersPokemonService {
         return trainerPokemonList;
     }
 
-    public void updateTrainersPokemonById(String nickname, int level, int pokemonId, int trainerId) {
+    public List<TrainerPokemon> updateTrainersPokemonById(String nickname, int level, int pokemonId, int trainerId) {
         trainersPokemonDAO.updateTrainersPokemonById(nickname, level, pokemonId, trainerId);
+        return getTrainersPokemonById(trainerId);
     }
 
     public void deleteTrainersPokemonById(int pokemonId, int trainerId) {
