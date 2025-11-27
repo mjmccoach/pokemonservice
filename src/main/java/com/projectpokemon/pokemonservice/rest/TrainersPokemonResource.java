@@ -19,8 +19,8 @@ public class TrainersPokemonResource {
     }
 
     @PutMapping("/{trainerId}/pokemon/{pokemonId}")
-    public void updateTrainersPokemon(@PathVariable("trainerId") int trainerId, @PathVariable("pokemonId") int pokemonId, @RequestBody TrainerPokemon trainerPokemon) {
-        trainersPokemonService.updateTrainersPokemonById(trainerPokemon.getNickname(), trainerPokemon.getLevel(), pokemonId, trainerId);
+    public List<TrainerPokemon> updateTrainersPokemon(@PathVariable("trainerId") int trainerId, @PathVariable("pokemonId") int pokemonId, @RequestBody TrainerPokemon trainerPokemon) {
+        return trainersPokemonService.updateTrainersPokemonById(trainerPokemon.getNickname(), trainerPokemon.getLevel(), pokemonId, trainerId);
     }
 
     @DeleteMapping("/{trainerId}/pokemon/{pokemonId}")

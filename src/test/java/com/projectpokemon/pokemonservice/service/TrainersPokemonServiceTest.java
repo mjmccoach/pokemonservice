@@ -15,6 +15,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -81,9 +82,16 @@ class TrainersPokemonServiceTest {
 
     @Test
     void update_trainer_pokemon() {
-        trainersPokemonService.updateTrainersPokemonById(null, LEVEL_18, POKEMON_1_ID, TRAINER_ID);
+        when(mockTrainersPokemonDAO.getTrainersPokemonById(eq(TRAINER_ID))).thenReturn(Collections.singletonList(trainerPokemon1));
+        when(mockPokemonBaseDao.getPokemonBaseById(eq(POKEMON_1_ID))).thenReturn(pokemonBase1);
+
+        List<TrainerPokemon> actual = trainersPokemonService.updateTrainersPokemonById(null, LEVEL_18, POKEMON_1_ID, TRAINER_ID);
 
         verify(mockTrainersPokemonDAO).updateTrainersPokemonById(null, LEVEL_18, POKEMON_1_ID, TRAINER_ID);
+        assertEquals(POKEMON_1_ID, actual.getFirst().getId());
+        assertEquals(TRAINER_ID, actual.getFirst().getTrainerId());
+        assertEquals(LEVEL_18, actual.getFirst().getLevel());
+        assertEquals(POKEMON_1_NAME, actual.getFirst().getPokemonBase().getName());
     }
 
     @Test
