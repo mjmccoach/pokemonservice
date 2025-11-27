@@ -1,6 +1,9 @@
 package com.projectpokemon.pokemonservice.service;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
+import com.projectpokemon.pokemonservice.objects.PokemonBase;
 import com.projectpokemon.pokemonservice.objects.TrainerPokemon;
+import com.projectpokemon.pokemonservice.persistence.PokemonBaseDAO;
 import com.projectpokemon.pokemonservice.persistence.TrainersPokemonDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
@@ -17,6 +20,7 @@ import java.util.List;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNull;
 import static org.mockito.ArgumentMatchers.anyInt;
+import static org.mockito.ArgumentMatchers.eq;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
@@ -25,26 +29,34 @@ import static org.mockito.Mockito.when;
 class TrainersPokemonServiceTest {
     private static final int TRAINER_ID = 20;
     private static final int POKEMON_1_ID = 2;
-    private static final int POKEMON_2_ID = 10;
+    private static final int POKEMON_2_ID = 5;
     private static final int LEVEL_30 = 30;
     private static final int LEVEL_18 = 18;
 
     @Mock
     TrainersPokemonDAO mockTrainersPokemonDAO;
+    @Mock
+    PokemonBaseDAO mockPokemonBaseDao;
     @InjectMocks
     private TrainersPokemonService trainersPokemonService;
     private TrainerPokemon trainerPokemon1;
     private TrainerPokemon trainerPokemon2;
+    private PokemonBase pokemonBase1;
+    private PokemonBase pokemonBase2;
 
     @BeforeEach
     void setUp() {
         trainerPokemon1 = new TrainerPokemon(POKEMON_1_ID, TRAINER_ID, LEVEL_18, null, null);
         trainerPokemon2 = new TrainerPokemon(POKEMON_2_ID, TRAINER_ID, LEVEL_30, null, null);
+        pokemonBase1 = new PokemonBase(2, "Ivysaur", PokemonType.GRASS, null);
+        pokemonBase2 = new PokemonBase(5, "Charmeleon", PokemonType.FIRE, null);
     }
 
     @Test
     void select_pokemon_by_trainer_id() {
         when(mockTrainersPokemonDAO.getTrainersPokemonById(anyInt())).thenReturn(Arrays.asList(trainerPokemon1, trainerPokemon2));
+        when(mockPokemonBaseDao.getPokemonBaseById(eq(2))).thenReturn(pokemonBase1);
+        when(mockPokemonBaseDao.getPokemonBaseById(eq(5))).thenReturn(pokemonBase2);
 
         List<TrainerPokemon> actual = trainersPokemonService.getTrainersPokemonById(TRAINER_ID);
 
@@ -56,13 +68,13 @@ class TrainersPokemonServiceTest {
         assertEquals(20, actual.getFirst().getTrainerId());
         assertEquals(18, actual.getFirst().getLevel());
         assertNull(actual.getFirst().getNickname());
-        assertNull(actual.getFirst().getPokemonBase());
+        assertEquals("Ivysaur", actual.getFirst().getPokemonBase().getName());
 
-        assertEquals(10, actual.get(1).getId());
+        assertEquals(5, actual.get(1).getId());
         assertEquals(20, actual.get(1).getTrainerId());
         assertEquals(30, actual.get(1).getLevel());
         assertNull(actual.get(1).getNickname());
-        assertNull(actual.get(1).getPokemonBase());
+        assertEquals("Charmeleon", actual.get(1).getPokemonBase().getName());
     }
 
     @Test
