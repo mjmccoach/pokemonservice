@@ -10,7 +10,7 @@ import java.util.List;
 @RestController("/pokemon/base")
 public class PokemonBaseResource {
 
-    private PokemonBaseService pokemonBaseService;
+    private final PokemonBaseService pokemonBaseService;
 
     public PokemonBaseResource(PokemonBaseService pokemonBaseService) {
         this.pokemonBaseService = pokemonBaseService;
