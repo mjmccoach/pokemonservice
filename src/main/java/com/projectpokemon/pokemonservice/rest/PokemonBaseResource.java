@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/pokemon/base")
+@RestController
+@RequestMapping("/pokemon/base")
 public class PokemonBaseResource {
 
     private final PokemonBaseService pokemonBaseService;

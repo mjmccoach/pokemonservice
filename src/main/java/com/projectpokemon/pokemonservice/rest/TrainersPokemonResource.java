@@ -7,7 +7,8 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@RestController("/trainers/pokemon/trainer")
+@RestController
+@RequestMapping("/trainers/pokemon/trainer")
 @AllArgsConstructor
 public class TrainersPokemonResource {
 
