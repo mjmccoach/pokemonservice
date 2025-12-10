@@ -12,7 +12,7 @@ import java.util.List;
 @AllArgsConstructor
 public class TrainersPokemonDAO {
 
-    private static final String SELECT_BY_ID = "SELECT * from TrainersPokemon WHERE trainerId = ?";
+    private static final String SELECT_BY_ID = "SELECT * from TrainersPokemon WHERE trainer_id = ?";
     private static final String UPDATE_BY_ID = "UPDATE TrainersPokemon" +
             "                                   SET nickname = '%s' " +
             "                                   SET level = '%s' " +
