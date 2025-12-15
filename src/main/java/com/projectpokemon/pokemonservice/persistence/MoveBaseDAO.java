@@ -22,7 +22,7 @@ public class MoveBaseDAO {
         return jdbcTemplate.queryForObject(SELECT_BY_ID, moveBaseRowMapper, id);
     }
 
-    public List<MoveBase> getMoveBaseById(String type) {
+    public List<MoveBase> getMoveBaseByType(String type) {
         return jdbcTemplate.query(SELECT_BY_TYPE, moveBaseRowMapper, type);
     }
 
