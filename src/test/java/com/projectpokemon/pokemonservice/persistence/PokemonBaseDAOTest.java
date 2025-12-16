@@ -8,6 +8,7 @@ import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
+import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -43,15 +44,16 @@ class PokemonBaseDAOTest {
     private PokemonBase pokemonBase1;
     private PokemonBase pokemonBase2;
 
-    private PokemonBaseDAO pokemonBaseDAO;
     @Mock
     private JdbcTemplate mockJdbcTemplate;
     @Mock
     private PokemonBaseRowMapper mockPokemonBaseRowMapper;
+    @InjectMocks
+    private PokemonBaseDAO pokemonBaseDAO;
+
 
     @BeforeEach
     void setUp() {
-        pokemonBaseDAO = new PokemonBaseDAO(mockJdbcTemplate, mockPokemonBaseRowMapper);
         pokemonBase1 = new PokemonBase(ID_1, NAME_1, PokemonType.GRASS, null);
         pokemonBase2 = new PokemonBase(ID_2, NAME_2, PokemonType.GRASS, null);
     }

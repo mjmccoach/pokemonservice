@@ -2,12 +2,14 @@ package com.projectpokemon.pokemonservice.persistence;
 
 import com.projectpokemon.pokemonservice.objects.MoveBase;
 import com.projectpokemon.pokemonservice.persistence.rowmapper.MoveBaseRowMapper;
+import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
+@AllArgsConstructor
 public class MoveBaseDAO {
 
     private static final String SELECT_BY_ID = "SELECT * FROM move_base WHERE id = ?";

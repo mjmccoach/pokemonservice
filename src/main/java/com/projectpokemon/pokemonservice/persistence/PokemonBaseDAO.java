@@ -3,12 +3,14 @@ package com.projectpokemon.pokemonservice.persistence;
 import com.projectpokemon.pokemonservice.enums.PokemonType;
 import com.projectpokemon.pokemonservice.objects.PokemonBase;
 import com.projectpokemon.pokemonservice.persistence.rowmapper.PokemonBaseRowMapper;
+import lombok.AllArgsConstructor;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
 @Repository
+@AllArgsConstructor
 public class PokemonBaseDAO {
 
     private static final String SELECT_BY_ID = "SELECT * from PokemonBase where id = ?";
@@ -22,11 +24,6 @@ public class PokemonBaseDAO {
 
     private final JdbcTemplate jdbcTemplate;
     private final PokemonBaseRowMapper pokemonBaseRowMapper;
-
-    public PokemonBaseDAO(JdbcTemplate jdbcTemplate, PokemonBaseRowMapper pokemonBaseRowMapper) {
-        this.jdbcTemplate = jdbcTemplate;
-        this.pokemonBaseRowMapper = pokemonBaseRowMapper;
-    }
 
     public PokemonBase getPokemonBaseById(int id) {
         return jdbcTemplate.queryForObject(SELECT_BY_ID, pokemonBaseRowMapper, id);
