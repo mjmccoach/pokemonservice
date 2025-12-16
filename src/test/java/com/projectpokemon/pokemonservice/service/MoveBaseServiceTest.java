@@ -83,7 +83,6 @@ class MoveBaseServiceTest {
 
     @Test
     void select_all() {
-
         when(mockMoveBaseDAO.getAllMoves()).thenReturn(Arrays.asList(moveBase1, moveBase2, moveBase3));
 
         List<MoveBase> actual = moveBaseService.getAllMoveBases();
