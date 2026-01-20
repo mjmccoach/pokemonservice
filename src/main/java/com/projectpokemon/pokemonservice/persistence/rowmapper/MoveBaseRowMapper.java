@@ -16,6 +16,6 @@ public class MoveBaseRowMapper implements RowMapper<MoveBase> {
                 rs.getInt("id"),
                 rs.getString("name"),
                 PokemonType.valueOf(rs.getString("type").toUpperCase()),
-                rs.getInt("pp"));
+                rs.getInt("maxpp"));
     }
 }
