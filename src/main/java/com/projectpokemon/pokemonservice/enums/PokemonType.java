@@ -5,7 +5,8 @@ public enum PokemonType {
     FIRE("fire"),
     GRASS("grass"),
     WATER("water"),
-    ELECTRIC("electric");
+    ELECTRIC("electric"),
+    BUG("bug");
 
     private String value;
 

@@ -59,7 +59,7 @@ class MoveBaseResourceTest {
         assertEquals(MOVE_BASE_ID1, actual.getId());
         assertEquals(MOVE_BASE_NAME1, actual.getName());
         assertEquals(PokemonType.FIRE, actual.getPokemonType());
-        assertEquals(PP1, actual.getPp());
+        assertEquals(PP1, actual.getMaxpp());
     }
 
     @Test
@@ -73,12 +73,12 @@ class MoveBaseResourceTest {
         assertEquals(MOVE_BASE_ID2, actual.getFirst().getId());
         assertEquals(MOVE_BASE_NAME2, actual.getFirst().getName());
         assertEquals(PokemonType.ELECTRIC, actual.getFirst().getPokemonType());
-        assertEquals(15, actual.getFirst().getPp());
+        assertEquals(15, actual.getFirst().getMaxpp());
 
         assertEquals(MOVE_BASE_ID3, actual.get(1).getId());
         assertEquals(MOVE_BASE_NAME3, actual.get(1).getName());
         assertEquals(PokemonType.ELECTRIC, actual.get(1).getPokemonType());
-        assertEquals(PP3, actual.get(1).getPp());
+        assertEquals(PP3, actual.get(1).getMaxpp());
     }
 
     @Test
@@ -92,16 +92,16 @@ class MoveBaseResourceTest {
         assertEquals(MOVE_BASE_ID1, actual.getFirst().getId());
         assertEquals(MOVE_BASE_NAME1, actual.getFirst().getName());
         assertEquals(PokemonType.FIRE, actual.getFirst().getPokemonType());
-        assertEquals(15, actual.getFirst().getPp());
+        assertEquals(15, actual.getFirst().getMaxpp());
 
         assertEquals(MOVE_BASE_ID2, actual.get(1).getId());
         assertEquals(MOVE_BASE_NAME2, actual.get(1).getName());
         assertEquals(PokemonType.ELECTRIC, actual.get(1).getPokemonType());
-        assertEquals(15, actual.get(1).getPp());
+        assertEquals(15, actual.get(1).getMaxpp());
 
         assertEquals(MOVE_BASE_ID3, actual.get(2).getId());
         assertEquals(MOVE_BASE_NAME3, actual.get(2).getName());
         assertEquals(PokemonType.ELECTRIC, actual.get(2).getPokemonType());
-        assertEquals(PP3, actual.get(2).getPp());
+        assertEquals(PP3, actual.get(2).getMaxpp());
     }
 }

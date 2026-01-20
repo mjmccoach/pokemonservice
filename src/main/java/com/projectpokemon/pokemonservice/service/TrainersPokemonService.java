@@ -4,10 +4,12 @@ import com.projectpokemon.pokemonservice.objects.TrainerPokemon;
 import com.projectpokemon.pokemonservice.persistence.PokemonBaseDAO;
 import com.projectpokemon.pokemonservice.persistence.TrainersPokemonDAO;
 import lombok.AllArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Slf4j
 @Component
 @AllArgsConstructor
 public class TrainersPokemonService {
@@ -30,7 +32,7 @@ public class TrainersPokemonService {
         trainersPokemonDAO.deleteTrainersPokemonById(pokemonId, trainerId);
     }
 
-    private void setPokemonBases(List<TrainerPokemon> trainerPokemonList) {
+    public void setPokemonBases(List<TrainerPokemon> trainerPokemonList) {
         trainerPokemonList.forEach(pokemon -> {
             pokemon.setPokemonBase(pokemonBaseDAO.getPokemonBaseById(pokemon.getId()));
         });

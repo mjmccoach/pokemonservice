@@ -1,5 +1,7 @@
 package com.projectpokemon.pokemonservice.rest;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
+import com.projectpokemon.pokemonservice.objects.PokemonBase;
 import com.projectpokemon.pokemonservice.objects.TrainerPokemon;
 import com.projectpokemon.pokemonservice.service.TrainersPokemonService;
 import org.junit.jupiter.api.BeforeEach;
@@ -12,6 +14,7 @@ import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -35,11 +38,13 @@ class TrainersPokemonResourceTest {
 
     TrainerPokemon trainerPokemon1;
     TrainerPokemon trainerPokemon2;
+    PokemonBase pokemonBase1;
 
     @BeforeEach
     void setUp() {
         trainerPokemon1 = new TrainerPokemon(POKEMON_1_ID, TRAINER_ID, LEVEL_18, null, null);
         trainerPokemon2 = new TrainerPokemon(POKEMON_2_ID, TRAINER_ID, LEVEL_30, null, null);
+        pokemonBase1 = new PokemonBase(10, "Caterpie", PokemonType.BUG, null);
     }
 
 
@@ -68,9 +73,12 @@ class TrainersPokemonResourceTest {
 
     @Test
     void update_trainer_pokemon() {
+        when(mockTrainersPokemonService.getTrainersPokemonById(anyInt())).thenReturn(Collections.singletonList(trainerPokemon2));
+
         trainersPokemonResource.updateTrainersPokemon(TRAINER_ID, POKEMON_2_ID, trainerPokemon2);
 
         verify(mockTrainersPokemonService).updateTrainersPokemonById(null, LEVEL_30, POKEMON_2_ID, TRAINER_ID);
+        verify(mockTrainersPokemonService).setPokemonBases(Collections.singletonList(trainerPokemon2));
     }
 
     @Test
