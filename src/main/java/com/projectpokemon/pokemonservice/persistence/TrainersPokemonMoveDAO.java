@@ -12,10 +12,10 @@ import java.util.List;
 @AllArgsConstructor
 public class TrainersPokemonMoveDAO {
     private static final String INSERT = "INSERT into trainer_pokemon_moves VALUES (%s, %s, %s)";
-    private static final String DELETE = "DELETE from trainer_pokemon_moves WHERE trainer_pokemon_id = ? AND move_id = ?";
+    private static final String DELETE = "DELETE from trainer_pokemon_moves WHERE trainer_pokemon_id = %s AND move_id = %s";
     private static final String UPDATE = "UPDATE trainer_pokemon_moves SET current_pp = %s WHERE trainer_pokemon_id = ? and move_id =?";
     private static final String SELECT_ALL = "SELECT * from trainer_pokemon_moves WHERE trainer_pokemon_id = ?";
-    
+
     private JdbcTemplate jdbcTemplate;
     private TrainerPokemonMoveRowMapper trainerPokemonMoveRowMapper;
 
@@ -31,7 +31,7 @@ public class TrainersPokemonMoveDAO {
         jdbcTemplate.update(UPDATE, newPp, trainerPokemonId, moveId);
     }
 
-    public List<TrainerPokemonMove> getAllTrainerPokemonMoves(int trainerPokemonId, int moveId) {
-        return jdbcTemplate.query(SELECT_ALL, trainerPokemonMoveRowMapper, trainerPokemonId, moveId);
+    public List<TrainerPokemonMove> getAllTrainerPokemonMoves(int trainerPokemonId) {
+        return jdbcTemplate.query(SELECT_ALL, trainerPokemonMoveRowMapper, trainerPokemonId);
     }
 }
