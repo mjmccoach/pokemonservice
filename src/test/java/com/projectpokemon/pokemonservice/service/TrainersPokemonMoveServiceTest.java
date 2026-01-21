@@ -1,7 +1,7 @@
-package com.projectpokemon.pokemonservice.persistence;
+package com.projectpokemon.pokemonservice.service;
 
 import com.projectpokemon.pokemonservice.objects.TrainerPokemonMove;
-import com.projectpokemon.pokemonservice.persistence.rowmapper.TrainerPokemonMoveRowMapper;
+import com.projectpokemon.pokemonservice.persistence.TrainersPokemonMoveDAO;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -10,7 +10,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,12 +21,7 @@ import static org.mockito.Mockito.when;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-class TrainersPokemonMoveDAOTest {
-    private static final String INSERT = "INSERT into trainer_pokemon_moves VALUES (%s, %s, %s)";
-    private static final String DELETE = "DELETE from trainer_pokemon_moves WHERE trainer_pokemon_id = %s AND move_id = %s";
-    private static final String UPDATE = "UPDATE trainer_pokemon_moves SET current_pp = %s WHERE trainer_pokemon_id = ? and move_id =?";
-    private static final String SELECT_ALL = "SELECT * from trainer_pokemon_moves WHERE trainer_pokemon_id = ?";
-
+class TrainersPokemonMoveServiceTest {
     private static final int TRAINER_POKEMON_ID = 20;
 
     private static final int MOVE_ID = 13;
@@ -36,11 +30,10 @@ class TrainersPokemonMoveDAOTest {
     private static final int CURRENT_PP_2 = 12;
 
     @Mock
-    JdbcTemplate mockJdbcTemplate;
-    @Mock
-    TrainerPokemonMoveRowMapper mockTrainerPokemonMoveRowMapper;
+    TrainersPokemonMoveDAO mockTrainersPokemonMoveDAO;
+
     @InjectMocks
-    TrainersPokemonMoveDAO trainersPokemonDAO;
+    TrainersPokemonMoveService trainersPokemonMoveService;
 
     private TrainerPokemonMove move1;
     private TrainerPokemonMove move2;
@@ -52,31 +45,31 @@ class TrainersPokemonMoveDAOTest {
     }
 
     @Test
-    void create() {
-        trainersPokemonDAO.createTrainerPokemonMove(TRAINER_POKEMON_ID, MOVE_ID, CURRENT_PP_1);
+    void create_trainer_pokemon_move() {
+        trainersPokemonMoveService.createTrainerPokemonMove(TRAINER_POKEMON_ID, MOVE_ID, CURRENT_PP_1);
 
-        verify(mockJdbcTemplate).execute(String.format(INSERT, TRAINER_POKEMON_ID, MOVE_ID, CURRENT_PP_1));
+        verify(mockTrainersPokemonMoveDAO).createTrainerPokemonMove(TRAINER_POKEMON_ID, MOVE_ID, CURRENT_PP_1);
     }
 
     @Test
-    void delete() {
-        trainersPokemonDAO.deleteTrainerPokemonMove(TRAINER_POKEMON_ID, MOVE_ID);
+    void update_trainer_pokemon_move() {
+        trainersPokemonMoveService.updateTrainerPokemonMovePp(CURRENT_PP_2, TRAINER_POKEMON_ID, MOVE_ID);
 
-        verify(mockJdbcTemplate).update(DELETE, TRAINER_POKEMON_ID, MOVE_ID);
+        verify(mockTrainersPokemonMoveDAO).updateTrainerPokemonMove(CURRENT_PP_2, TRAINER_POKEMON_ID, MOVE_ID);
     }
 
     @Test
-    void update() {
-        trainersPokemonDAO.updateTrainerPokemonMove(CURRENT_PP_2, TRAINER_POKEMON_ID, MOVE_ID);
+    void delete_trainer_pokemon_move() {
+        trainersPokemonMoveService.deleteTrainerPokemonMove(TRAINER_POKEMON_ID, MOVE_ID);
 
-        verify(mockJdbcTemplate).update(UPDATE, CURRENT_PP_2, TRAINER_POKEMON_ID, MOVE_ID);
+        verify(mockTrainersPokemonMoveDAO).deleteTrainerPokemonMove(TRAINER_POKEMON_ID, MOVE_ID);
     }
 
     @Test
-    void select_all() {
-        when(mockJdbcTemplate.query(eq(SELECT_ALL), eq(mockTrainerPokemonMoveRowMapper), eq(TRAINER_POKEMON_ID))).thenReturn(Arrays.asList(move1, move2));
+    void select_all_trainer_pokemons_moves() {
+        when(mockTrainersPokemonMoveDAO.getAllTrainerPokemonMoves(eq(TRAINER_POKEMON_ID))).thenReturn(Arrays.asList(move1, move2));
 
-        List<TrainerPokemonMove> actual = trainersPokemonDAO.getAllTrainerPokemonMoves(TRAINER_POKEMON_ID);
+        List<TrainerPokemonMove> actual = trainersPokemonMoveService.getAllTrainersPokemonMoves(TRAINER_POKEMON_ID);
 
         assertEquals(2, actual.size());
 
