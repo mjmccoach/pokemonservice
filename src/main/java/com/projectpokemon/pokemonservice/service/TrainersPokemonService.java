@@ -16,10 +16,12 @@ public class TrainersPokemonService {
 
     private TrainersPokemonDAO trainersPokemonDAO;
     private PokemonBaseDAO pokemonBaseDAO;
+    private TrainersPokemonMoveService trainersPokemonMoveService;
 
     public List<TrainerPokemon> getTrainersPokemonById(int trainerId) {
         List<TrainerPokemon> trainerPokemonList = trainersPokemonDAO.getTrainersPokemonById(trainerId);
         setPokemonBases(trainerPokemonList);
+        setPokemonMoves(trainerPokemonList);
         return trainerPokemonList;
     }
 
@@ -35,6 +37,12 @@ public class TrainersPokemonService {
     public void setPokemonBases(List<TrainerPokemon> trainerPokemonList) {
         trainerPokemonList.forEach(pokemon -> {
             pokemon.setPokemonBase(pokemonBaseDAO.getPokemonBaseById(pokemon.getId()));
+        });
+    }
+
+    public void setPokemonMoves(List<TrainerPokemon> trainerPokemonList) {
+        trainerPokemonList.forEach(pokemon -> {
+            pokemon.setMoves(trainersPokemonMoveService.getAllTrainersPokemonMoves(pokemon.getId()));
         });
     }
 }

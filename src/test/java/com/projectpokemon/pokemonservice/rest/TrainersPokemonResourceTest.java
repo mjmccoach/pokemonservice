@@ -42,8 +42,8 @@ class TrainersPokemonResourceTest {
 
     @BeforeEach
     void setUp() {
-        trainerPokemon1 = new TrainerPokemon(POKEMON_1_ID, TRAINER_ID, LEVEL_18, null, null);
-        trainerPokemon2 = new TrainerPokemon(POKEMON_2_ID, TRAINER_ID, LEVEL_30, null, null);
+        trainerPokemon1 = new TrainerPokemon(POKEMON_1_ID, TRAINER_ID, LEVEL_18, null, null, Collections.emptyList());
+        trainerPokemon2 = new TrainerPokemon(POKEMON_2_ID, TRAINER_ID, LEVEL_30, null, null, Collections.emptyList());
         pokemonBase1 = new PokemonBase(10, "Caterpie", PokemonType.BUG, null);
     }
 
