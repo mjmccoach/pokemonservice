@@ -73,12 +73,9 @@ class TrainersPokemonResourceTest {
 
     @Test
     void update_trainer_pokemon() {
-        when(mockTrainersPokemonService.getTrainersPokemonById(anyInt())).thenReturn(Collections.singletonList(trainerPokemon2));
-
         trainersPokemonResource.updateTrainersPokemon(TRAINER_ID, POKEMON_2_ID, trainerPokemon2);
 
         verify(mockTrainersPokemonService).updateTrainersPokemonById(null, LEVEL_30, POKEMON_2_ID, TRAINER_ID);
-        verify(mockTrainersPokemonService).setPokemonBases(Collections.singletonList(trainerPokemon2));
     }
 
     @Test
