@@ -16,6 +16,7 @@ public class TrainerPokemonRowMapper implements RowMapper<TrainerPokemon> {
                 rs.getInt("trainer_id"),
                 rs.getInt("level"),
                 rs.getString("nickname"),
+                null,
                 null);
     }
 }
