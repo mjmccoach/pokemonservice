@@ -20,12 +20,10 @@ class MoveBaseRowMapperTest {
     private static final int MOVE_BASE_ID1 = 30;
     private static final String MOVE_BASE_NAME1 = "Flamethrower";
     private static final int PP1 = 15;
-    private static final int MOVE_BASE_ID2 = 45;
-    private static final String MOVE_BASE_NAME2 = "Thunderbolt";
-    private static final int PP2 = 15;
-    private static final int MOVE_BASE_ID3 = 50;
-    private static final String MOVE_BASE_NAME3 = "Thunder";
-    private static final int PP3 = 5;
+    private static final String ID_COLUMN = "id";
+    private static final String NAME_COLUMN = "name";
+    private static final String TYPE_COLUMN = "type";
+    private static final String MAX_PP_COLUMN = "max_pp";
 
     MoveBaseRowMapper moveBaseRowMapper;
 
@@ -35,10 +33,10 @@ class MoveBaseRowMapperTest {
     void setUp() throws SQLException {
         moveBaseRowMapper = new MoveBaseRowMapper();
         mockResultSet = Mockito.mock(ResultSet.class);
-        when(mockResultSet.getInt(eq("id"))).thenReturn(MOVE_BASE_ID1);
-        when(mockResultSet.getString(eq("name"))).thenReturn(MOVE_BASE_NAME1);
-        when(mockResultSet.getString("type")).thenReturn(PokemonType.FIRE.name());
-        when(mockResultSet.getInt(eq("maxpp"))).thenReturn(PP1);
+        when(mockResultSet.getInt(eq(ID_COLUMN))).thenReturn(MOVE_BASE_ID1);
+        when(mockResultSet.getString(eq(NAME_COLUMN))).thenReturn(MOVE_BASE_NAME1);
+        when(mockResultSet.getString(TYPE_COLUMN)).thenReturn(PokemonType.FIRE.name());
+        when(mockResultSet.getInt(eq(MAX_PP_COLUMN))).thenReturn(PP1);
     }
 
     @Test
