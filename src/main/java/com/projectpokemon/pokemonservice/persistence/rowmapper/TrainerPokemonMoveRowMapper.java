@@ -12,7 +12,7 @@ public class TrainerPokemonMoveRowMapper implements RowMapper<TrainerPokemonMove
     @Override
     public TrainerPokemonMove mapRow(ResultSet rs, int rowNum) throws SQLException {
         return new TrainerPokemonMove(
-                rs.getInt("pokemon_id"),
+                rs.getInt("trainer_pokemon_id"),
                 rs.getInt("move_id"),
                 null,
                 rs.getInt("current_pp"));

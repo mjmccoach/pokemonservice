@@ -33,6 +33,7 @@ class PokemonBaseServiceTest {
     private PokemonBaseService pokemonBaseService;
     private PokemonBase pokemonBase1;
     private PokemonBase pokemonBase2;
+
     @Mock
     private PokemonBaseDAO mockPokemonBaseDao;
 

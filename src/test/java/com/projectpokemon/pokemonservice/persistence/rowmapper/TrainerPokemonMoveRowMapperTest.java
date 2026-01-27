@@ -17,7 +17,7 @@ import static org.mockito.Mockito.when;
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class TrainerPokemonMoveRowMapperTest {
 
-    private static final String POKEMON_ID_COLUMN = "pokemon_id";
+    private static final String POKEMON_ID_COLUMN = "trainer_pokemon_id";
     private static final String MOVE_ID_COLUMN = "move_id";
     private static final String CURRENT_PP_COLUMN = "current_pp";
     private static final int POKEMON_ID_1 = 27;
