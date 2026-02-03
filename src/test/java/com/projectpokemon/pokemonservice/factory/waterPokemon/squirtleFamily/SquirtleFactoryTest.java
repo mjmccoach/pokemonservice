@@ -1,6 +1,5 @@
-package com.projectpokemon.pokemonservice.factory.waterPokemon;
+package com.projectpokemon.pokemonservice.factory.waterPokemon.squirtleFamily;
 
-import com.projectpokemon.pokemonservice.factory.waterPokemon.squirtleFamily.SquirtleFactory;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
