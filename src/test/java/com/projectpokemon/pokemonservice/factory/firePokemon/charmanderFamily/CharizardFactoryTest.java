@@ -1,4 +1,4 @@
-package com.projectpokemon.pokemonservice.factory.grassPokemon.bulbasaurFamily;
+package com.projectpokemon.pokemonservice.factory.firePokemon.charmanderFamily;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
@@ -12,33 +12,33 @@ import static org.junit.jupiter.api.Assertions.assertFalse;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-class VenusaurFactoryTest {
-    private static final String VENUSAUR = "Venusaur";
+class CharizardFactoryTest {
+    private static final String CHARIZARD = "Charizard";
 
-    VenusaurFactory venusaurFactory;
+    CharizardFactory charizardFactory;
 
     @BeforeEach
     void setUp() {
-        venusaurFactory = new VenusaurFactory();
+        charizardFactory = new CharizardFactory();
     }
 
     @Test
-    void supports_ivysaur() {
-        assertEquals(VENUSAUR, venusaurFactory.supports());
+    void supports_charizard() {
+        assertEquals(CHARIZARD, charizardFactory.supports());
     }
 
     @Test
     void has_no_valid_evolutions() {
-        assertEquals(0, venusaurFactory.validEvolutions().size());
+        assertEquals(0, charizardFactory.validEvolutions().size());
     }
 
     @Test
-    void has_no_evolution_level() {
-        assertEquals(0, venusaurFactory.getEvolutionLevel());
+    void does_not_have_an_evolution_level() {
+        assertEquals(0, charizardFactory.getEvolutionLevel());
     }
 
     @Test
-    void does_not_evolve_with_leafstone() {
-        assertFalse(venusaurFactory.canEvolveWithLeafStone());
+    void does_not_evolve_with_firestone() {
+        assertFalse(charizardFactory.canEvolveWithFireStone());
     }
 }
