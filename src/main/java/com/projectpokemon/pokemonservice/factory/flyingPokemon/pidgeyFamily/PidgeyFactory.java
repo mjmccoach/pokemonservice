@@ -1,10 +1,11 @@
 package com.projectpokemon.pokemonservice.factory.flyingPokemon.pidgeyFamily;
 
 import com.projectpokemon.pokemonservice.factory.flyingPokemon.FlyingPokemonInterface;
+import com.projectpokemon.pokemonservice.factory.normalPokemon.NormalPokemonInterface;
 
 import java.util.List;
 
-public class PidgeyFactory implements FlyingPokemonInterface {
+public class PidgeyFactory implements FlyingPokemonInterface, NormalPokemonInterface {
     @Override
     public String supports() {
         return "Pidgey";
