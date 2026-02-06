@@ -1,23 +1,23 @@
-package com.projectpokemon.pokemonservice.factory.flyingPokemon.pidgeyFamily;
+package com.projectpokemon.pokemonservice.factory.flyingPokemon.spearowFamily;
 
 import com.projectpokemon.pokemonservice.factory.flyingPokemon.FlyingPokemonInterface;
 import com.projectpokemon.pokemonservice.factory.normalPokemon.NormalPokemonInterface;
 
 import java.util.List;
 
-public class PidgeottoFactory implements FlyingPokemonInterface, NormalPokemonInterface {
+public class SpearowFactory implements FlyingPokemonInterface, NormalPokemonInterface {
     @Override
     public String supports() {
-        return "Pidgeotto";
+        return "Spearow";
     }
 
     @Override
     public List<String> validEvolutions() {
-        return List.of("Pidgeot");
+        return List.of("Fearow");
     }
 
     @Override
     public int getEvolutionLevel() {
-        return 36;
+        return 20;
     }
 }
