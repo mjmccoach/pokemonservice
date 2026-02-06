@@ -22,7 +22,7 @@ class FearowFactoryTest {
     }
 
     @Test
-    void supports_spearow() {
+    void supports_fearow() {
         assertEquals(FEAROW, fearowFactory.supports());
     }
 
