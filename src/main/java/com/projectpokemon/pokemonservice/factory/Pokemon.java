@@ -8,4 +8,8 @@ public interface Pokemon {
     List<String> validEvolutions();
 
     int getEvolutionLevel();
+
+    default boolean evolvesWithStone() {
+        return false;
+    }
 }
