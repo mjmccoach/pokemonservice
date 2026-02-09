@@ -23,7 +23,7 @@ class RaichuFactoryTest {
     }
 
     @Test
-    void supports_pikachu() {
+    void supports_raichu() {
         assertEquals(RAICHU, raichuFactory.supports());
     }
 
