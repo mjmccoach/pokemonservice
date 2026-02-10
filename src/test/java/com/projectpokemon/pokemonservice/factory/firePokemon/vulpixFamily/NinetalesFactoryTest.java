@@ -1,6 +1,5 @@
 package com.projectpokemon.pokemonservice.factory.firePokemon.vulpixFamily;
 
-import com.projectpokemon.pokemonservice.enums.StoneType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -9,39 +8,31 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-class VulpixFactoryTest {
-    private static final String VULPIX = "Vulpix";
+class NinetalesFactoryTest {
     private static final String NINETALES = "Ninetales";
 
-    VulpixFactory vulpixFactory;
+    NinetalesFactory ninetalesFactory;
 
     @BeforeEach
     void setUp() {
-        vulpixFactory = new VulpixFactory();
+        ninetalesFactory = new NinetalesFactory();
     }
 
     @Test
-    void supports_vulpix() {
-        assertEquals(VULPIX, vulpixFactory.supports());
+    void supports_ninetales() {
+        assertEquals(NINETALES, ninetalesFactory.supports());
     }
 
     @Test
-    void only_evolves_into_ninetales() {
-        assertEquals(NINETALES, vulpixFactory.validEvolutions().getFirst());
+    void has_no_valid_evolutions() {
+        assertEquals(0, ninetalesFactory.validEvolutions().size());
     }
 
     @Test
     void does_not_evolve_by_level() {
-        assertEquals(0, vulpixFactory.getEvolutionLevel());
-    }
-
-    @Test
-    void evolves_with_firestone() {
-        assertTrue(vulpixFactory.evolvesWithStone());
-        assertEquals(StoneType.FIRE, vulpixFactory.getEvolutionStone());
+        assertEquals(0, ninetalesFactory.getEvolutionLevel());
     }
 }
