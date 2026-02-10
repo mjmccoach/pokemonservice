@@ -1,5 +1,8 @@
 package com.projectpokemon.pokemonservice.factory;
 
+import com.projectpokemon.pokemonservice.enums.StoneType;
+import org.apache.commons.lang3.NotImplementedException;
+
 import java.util.List;
 
 public interface Pokemon {
@@ -11,5 +14,9 @@ public interface Pokemon {
 
     default boolean evolvesWithStone() {
         return false;
+    }
+
+    default StoneType getEvolutionStone() {
+        throw new NotImplementedException();
     }
 }
