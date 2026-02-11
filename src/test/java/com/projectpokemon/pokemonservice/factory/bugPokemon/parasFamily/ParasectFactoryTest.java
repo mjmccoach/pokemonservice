@@ -22,7 +22,7 @@ class ParasectFactoryTest {
     }
 
     @Test
-    void supports_paras() {
+    void supports_parasect() {
         assertEquals(PARASECT, parasectFactory.supports());
     }
 
