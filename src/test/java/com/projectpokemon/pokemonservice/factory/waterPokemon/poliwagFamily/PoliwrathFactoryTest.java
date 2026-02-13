@@ -12,28 +12,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class PoliwrathFactoryTest {
-    private static final String POLIWHIRL = "Poliwhirl";
     private static final String POLIWRATH = "Poliwrath";
 
-    PoliwhirlFactory poliwhirlFactory;
+    PoliwrathFactory poliwrathFactory;
 
     @BeforeEach
     void setUp() {
-        poliwhirlFactory = new PoliwhirlFactory();
+        poliwrathFactory = new PoliwrathFactory();
     }
 
     @Test
     void supports_poliwrath() {
-        assertEquals(POLIWHIRL, poliwhirlFactory.supports());
+        assertEquals(POLIWRATH, poliwrathFactory.supports());
     }
 
     @Test
     void has_no_valid_evolutions() {
-        assertEquals(POLIWRATH, poliwhirlFactory.validEvolutions().getFirst());
+        assertEquals(0, poliwrathFactory.validEvolutions().size());
     }
 
     @Test
     void does_not_evolve() {
-        assertEquals(0, poliwhirlFactory.getEvolutionLevel());
+        assertEquals(0, poliwrathFactory.getEvolutionLevel());
     }
 }
