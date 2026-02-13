@@ -4,7 +4,8 @@ public enum StoneType {
     //TODO Move this into a shared library so can be accessed from Trainer and Pokemon Service.
     MOON("Moonstone"),
     FIRE("Firestone"),
-    LEAF("Leafstone");
+    LEAF("Leafstone"),
+    WATER("Waterstone");
 
     private String value;
 
