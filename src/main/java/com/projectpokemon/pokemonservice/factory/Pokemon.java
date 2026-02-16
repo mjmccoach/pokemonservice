@@ -19,4 +19,8 @@ public interface Pokemon {
     default StoneType getEvolutionStone() {
         throw new NotImplementedException();
     }
+
+    default boolean evolvesWithTrade() {
+        return false;
+    }
 }
