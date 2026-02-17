@@ -1,4 +1,4 @@
-package com.projectpokemon.pokemonservice.factory.waterPokemon.slowpokeFamily;
+package com.projectpokemon.pokemonservice.factory.electricPokemon.magnemiteFamily;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
@@ -11,28 +11,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-class SlowbroFactoryTest {
-    private static final String SLOWBRO = "Slowbro";
+class MagnetonFactoryTest {
+    private static final String MAGNETON = "Magneton";
 
-    SlowbroFactory slowbroFactory;
+    MagnetonFactory magnetonFactory;
 
     @BeforeEach
     void setUp() {
-        slowbroFactory = new SlowbroFactory();
+        magnetonFactory = new MagnetonFactory();
     }
 
     @Test
-    void supports_slowbro() {
-        assertEquals(SLOWBRO, slowbroFactory.supports());
+    void supports_magneton() {
+        assertEquals(MAGNETON, magnetonFactory.supports());
     }
 
     @Test
     void has_no_valid_evolutions() {
-        assertEquals(0, slowbroFactory.validEvolutions().size());
+        assertEquals(0, magnetonFactory.validEvolutions().size());
     }
 
     @Test
-    void does_not_evolve() {
-        assertEquals(0, slowbroFactory.getEvolutionLevel());
+    void does_not_evolve_by_level() {
+        assertEquals(0, magnetonFactory.getEvolutionLevel());
     }
 }
