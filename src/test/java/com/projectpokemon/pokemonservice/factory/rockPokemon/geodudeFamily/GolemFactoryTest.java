@@ -22,7 +22,7 @@ class GolemFactoryTest {
     }
 
     @Test
-    void supports_golemgs() {
+    void supports_golem() {
         assertEquals(GOLEM, golemFactory.supports());
     }
 
