@@ -17,7 +17,6 @@ class WeepinbellFactoryTest {
     private static final String WEEPINBELL = "Weepinbell";
     private static final String VICTREEBEL = "Victreebel";
 
-
     WeepinbellFactory weepinbellFactory;
 
     @BeforeEach
