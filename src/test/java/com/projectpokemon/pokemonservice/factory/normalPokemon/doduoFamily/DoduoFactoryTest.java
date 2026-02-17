@@ -33,7 +33,7 @@ class DoduoFactoryTest {
     }
 
     @Test
-    void evolves_at_level_30() {
+    void evolves_at_level_31() {
         assertEquals(31, doduoFactory.getEvolutionLevel());
     }
 }
