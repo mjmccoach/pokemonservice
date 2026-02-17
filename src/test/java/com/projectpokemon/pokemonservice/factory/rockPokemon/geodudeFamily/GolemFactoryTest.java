@@ -1,4 +1,4 @@
-package com.projectpokemon.pokemonservice.factory.grassPokemon.bellsproutFamily;
+package com.projectpokemon.pokemonservice.factory.rockPokemon.geodudeFamily;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
@@ -11,28 +11,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-class VictreebelFactoryTest {
-    private static final String VICTREEBEL = "Victreebel";
+class GolemFactoryTest {
+    private static final String GOLEM = "Golem";
 
-    VictreebelFactory victreebelFactory;
+    GolemFactory golemFactory;
 
     @BeforeEach
     void setUp() {
-        victreebelFactory = new VictreebelFactory();
+        golemFactory = new GolemFactory();
     }
 
     @Test
-    void supports_victreebel() {
-        assertEquals(VICTREEBEL, victreebelFactory.supports());
+    void supports_golem() {
+        assertEquals(GOLEM, golemFactory.supports());
     }
 
     @Test
     void has_no_valid_evolutions() {
-        assertEquals(0, victreebelFactory.validEvolutions().size());
+        assertEquals(0, golemFactory.validEvolutions().size());
     }
 
     @Test
     void does_not_evolve_by_level() {
-        assertEquals(0, victreebelFactory.getEvolutionLevel());
+        assertEquals(0, golemFactory.getEvolutionLevel());
     }
 }
