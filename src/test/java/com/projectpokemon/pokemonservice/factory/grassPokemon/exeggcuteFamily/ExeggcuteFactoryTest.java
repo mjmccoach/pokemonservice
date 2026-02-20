@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class ExeggcuteFactoryTest {
     private static final String EXEGGCUTE = "Exeggcute";
-    private static final String EXEGGCUTOR = "Exeggcutor";
+    private static final String EXEGGCUTOR = "Exeggutor";
 
     ExeggcuteFactory exeggcuteFactory;
 

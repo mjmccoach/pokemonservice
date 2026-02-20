@@ -5,10 +5,10 @@ import com.projectpokemon.pokemonservice.factory.psychicPokemon.PsychicPokemonIn
 
 import java.util.List;
 
-public class ExeggcutorFactory implements GrassPokemonInterface, PsychicPokemonInterface {
+public class ExeggutorFactory implements GrassPokemonInterface, PsychicPokemonInterface {
     @Override
     public String supports() {
-        return "Exeggcutor";
+        return "Exeggutor";
     }
 
     @Override

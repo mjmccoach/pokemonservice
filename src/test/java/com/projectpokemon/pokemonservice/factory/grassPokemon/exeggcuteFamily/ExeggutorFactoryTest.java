@@ -11,28 +11,28 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
-class ExeggcutorFactoryTest {
-    private static final String EXEGGCUTOR = "Exeggcutor";
+class ExeggutorFactoryTest {
+    private static final String EXEGGCUTOR = "Exeggutor";
 
-    ExeggcutorFactory exeggcutorFactory;
+    ExeggutorFactory exeggutorFactory;
 
     @BeforeEach
     void setUp() {
-        exeggcutorFactory = new ExeggcutorFactory();
+        exeggutorFactory = new ExeggutorFactory();
     }
 
     @Test
     void supports_exeggcutor() {
-        assertEquals(EXEGGCUTOR, exeggcutorFactory.supports());
+        assertEquals(EXEGGCUTOR, exeggutorFactory.supports());
     }
 
     @Test
     void has_no_valid_evolutions() {
-        assertEquals(0, exeggcutorFactory.validEvolutions().size());
+        assertEquals(0, exeggutorFactory.validEvolutions().size());
     }
 
     @Test
     void does_not_evolve_by_level() {
-        assertEquals(0, exeggcutorFactory.getEvolutionLevel());
+        assertEquals(0, exeggutorFactory.getEvolutionLevel());
     }
 }

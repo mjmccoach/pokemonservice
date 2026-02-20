@@ -14,7 +14,7 @@ public class ExeggcuteFactory implements GrassPokemonInterface, PsychicPokemonIn
 
     @Override
     public List<String> validEvolutions() {
-        return List.of("Exeggcutor");
+        return List.of("Exeggutor");
     }
 
     @Override
