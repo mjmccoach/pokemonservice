@@ -12,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class ExeggutorFactoryTest {
-    private static final String EXEGGCUTOR = "Exeggutor";
+    private static final String EXEGGUTOR = "Exeggutor";
 
     ExeggutorFactory exeggutorFactory;
 
@@ -23,7 +23,7 @@ class ExeggutorFactoryTest {
 
     @Test
     void supports_exeggcutor() {
-        assertEquals(EXEGGCUTOR, exeggutorFactory.supports());
+        assertEquals(EXEGGUTOR, exeggutorFactory.supports());
     }
 
     @Test

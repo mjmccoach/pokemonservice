@@ -15,7 +15,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class ExeggcuteFactoryTest {
     private static final String EXEGGCUTE = "Exeggcute";
-    private static final String EXEGGCUTOR = "Exeggutor";
+    private static final String EXEGGUTOR = "Exeggutor";
 
     ExeggcuteFactory exeggcuteFactory;
 
@@ -30,8 +30,8 @@ class ExeggcuteFactoryTest {
     }
 
     @Test
-    void only_evolves_into_exeggcutor() {
-        assertEquals(EXEGGCUTOR, exeggcuteFactory.validEvolutions().getFirst());
+    void only_evolves_into_exeggutor() {
+        assertEquals(EXEGGUTOR, exeggcuteFactory.validEvolutions().getFirst());
     }
 
     @Test
