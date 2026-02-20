@@ -22,7 +22,7 @@ class ExeggutorFactoryTest {
     }
 
     @Test
-    void supports_exeggcutor() {
+    void supports_exeggutor() {
         assertEquals(EXEGGUTOR, exeggutorFactory.supports());
     }
 
