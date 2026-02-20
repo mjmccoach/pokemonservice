@@ -12,28 +12,27 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 @ExtendWith(MockitoExtension.class)
 @DisplayNameGeneration(DisplayNameGenerator.ReplaceUnderscores.class)
 class ElectrodeFactoryTest {
-    private static final String VOLTORB = "Voltorb";
     private static final String ELECTRODE = "Electrode";
 
-    VoltorbFactory voltorbFactory;
+    ElectrodeFactory electrodeFactory;
 
     @BeforeEach
     void setUp() {
-        voltorbFactory = new VoltorbFactory();
+        electrodeFactory = new ElectrodeFactory();
     }
 
     @Test
-    void supports_voltorb() {
-        assertEquals(VOLTORB, voltorbFactory.supports());
+    void supports_electrode() {
+        assertEquals(ELECTRODE, electrodeFactory.supports());
     }
 
     @Test
-    void only_evolves_into_electrode() {
-        assertEquals(ELECTRODE, voltorbFactory.validEvolutions().getFirst());
+    void has_no_valid_evolutions() {
+        assertEquals(0, electrodeFactory.validEvolutions().size());
     }
 
     @Test
-    void evolves_at_level_30() {
-        assertEquals(30, voltorbFactory.getEvolutionLevel());
+    void does_not_evolve_by_level() {
+        assertEquals(0, electrodeFactory.getEvolutionLevel());
     }
 }
