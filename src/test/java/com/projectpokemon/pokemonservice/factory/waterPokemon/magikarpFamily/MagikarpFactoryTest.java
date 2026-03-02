@@ -33,7 +33,7 @@ class MagikarpFactoryTest {
     }
 
     @Test
-    void does_not_evolve_by_level() {
+    void evolves_at_level_20() {
         assertEquals(20, magikarpFactory.getEvolutionLevel());
     }
 }
