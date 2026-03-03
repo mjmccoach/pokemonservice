@@ -25,7 +25,7 @@ public class StaryuFactory implements WaterPokemonInterface {
         return true;
     }
 
-    public StoneType getEvolutionStone() {
-        return StoneType.WATER;
+    public List<StoneType> getEvolutionStone() {
+        return List.of(StoneType.WATER);
     }
 }

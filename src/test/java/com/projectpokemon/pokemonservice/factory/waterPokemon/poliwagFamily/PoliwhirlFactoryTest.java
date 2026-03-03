@@ -37,6 +37,6 @@ class PoliwhirlFactoryTest {
     @Test
     void evolves_with_waterstone() {
         assertTrue(poliwhirlFactory.evolvesWithStone());
-        assertEquals(StoneType.WATER, poliwhirlFactory.getEvolutionStone());
+        assertEquals(StoneType.WATER, poliwhirlFactory.getEvolutionStone().getFirst());
     }
 }

@@ -37,6 +37,6 @@ class ExeggcuteFactoryTest {
     @Test
     void evolves_with_leafstone() {
         assertTrue(exeggcuteFactory.evolvesWithStone());
-        assertEquals(StoneType.LEAF, exeggcuteFactory.getEvolutionStone());
+        assertEquals(StoneType.LEAF, exeggcuteFactory.getEvolutionStone().getFirst());
     }
 }

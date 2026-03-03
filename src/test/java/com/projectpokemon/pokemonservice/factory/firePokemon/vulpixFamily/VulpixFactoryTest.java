@@ -42,6 +42,6 @@ class VulpixFactoryTest {
     @Test
     void evolves_with_firestone() {
         assertTrue(vulpixFactory.evolvesWithStone());
-        assertEquals(StoneType.FIRE, vulpixFactory.getEvolutionStone());
+        assertEquals(StoneType.FIRE, vulpixFactory.getEvolutionStone().getFirst());
     }
 }

@@ -42,6 +42,6 @@ class GrowlitheFactoryTest {
     @Test
     void evolves_with_firestone() {
         assertTrue(growlitheFactory.evolvesWithStone());
-        assertEquals(StoneType.FIRE, growlitheFactory.getEvolutionStone());
+        assertEquals(StoneType.FIRE, growlitheFactory.getEvolutionStone().getFirst());
     }
 }

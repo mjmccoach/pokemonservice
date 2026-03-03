@@ -42,6 +42,6 @@ class WeepinbellFactoryTest {
     @Test
     void evolves_with_leaf_stone() {
         assertTrue(weepinbellFactory.evolvesWithStone());
-        assertEquals(StoneType.LEAF, weepinbellFactory.getEvolutionStone());
+        assertEquals(StoneType.LEAF, weepinbellFactory.getEvolutionStone().getFirst());
     }
 }

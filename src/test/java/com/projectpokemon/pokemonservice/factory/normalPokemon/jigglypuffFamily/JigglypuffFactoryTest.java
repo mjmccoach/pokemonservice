@@ -42,6 +42,6 @@ class JigglypuffFactoryTest {
     @Test
     void evolves_with_moonstone() {
         assertTrue(jigglypuffFactory.evolvesWithStone());
-        assertEquals(StoneType.MOON, jigglypuffFactory.getEvolutionStone());
+        assertEquals(StoneType.MOON, jigglypuffFactory.getEvolutionStone().getFirst());
     }
 }

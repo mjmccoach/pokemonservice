@@ -38,6 +38,6 @@ class StaryuFactoryTest {
     void evolves_with_waterstone() {
         assertEquals(0, staryuFactory.getEvolutionLevel());
         assertTrue(staryuFactory.evolvesWithStone());
-        assertEquals(StoneType.WATER, staryuFactory.getEvolutionStone());
+        assertEquals(StoneType.WATER, staryuFactory.getEvolutionStone().getFirst());
     }
 }

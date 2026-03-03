@@ -28,7 +28,7 @@ public class GloomFactory implements GrassPokemonInterface, PoisonPokemonInterfa
     }
 
     @Override
-    public StoneType getEvolutionStone() {
-        return StoneType.LEAF;
+    public List<StoneType> getEvolutionStone() {
+        return List.of(StoneType.LEAF);
     }
 }

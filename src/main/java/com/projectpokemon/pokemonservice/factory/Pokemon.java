@@ -16,7 +16,7 @@ public interface Pokemon {
         return false;
     }
 
-    default StoneType getEvolutionStone() {
+    default List<StoneType> getEvolutionStone() {
         throw new NotImplementedException();
     }
 

@@ -42,6 +42,6 @@ class GloomFactoryTest {
     @Test
     void evolves_with_leafstone() {
         assertTrue(gloomFactory.evolvesWithStone());
-        assertEquals(StoneType.LEAF, gloomFactory.getEvolutionStone());
+        assertEquals(StoneType.LEAF, gloomFactory.getEvolutionStone().getFirst());
     }
 }

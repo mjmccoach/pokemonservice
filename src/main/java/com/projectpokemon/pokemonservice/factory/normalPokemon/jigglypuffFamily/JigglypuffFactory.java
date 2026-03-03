@@ -27,7 +27,7 @@ public class JigglypuffFactory implements NormalPokemonInterface {
     }
 
     @Override
-    public StoneType getEvolutionStone() {
-        return StoneType.MOON;
+    public List<StoneType> getEvolutionStone() {
+        return List.of(StoneType.MOON);
     }
 }

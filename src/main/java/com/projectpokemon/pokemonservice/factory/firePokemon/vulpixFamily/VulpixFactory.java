@@ -27,7 +27,7 @@ public class VulpixFactory implements FirePokemonInterface {
     }
 
     @Override
-    public StoneType getEvolutionStone() {
-        return StoneType.FIRE;
+    public List<StoneType> getEvolutionStone() {
+        return List.of(StoneType.FIRE);
     }
 }

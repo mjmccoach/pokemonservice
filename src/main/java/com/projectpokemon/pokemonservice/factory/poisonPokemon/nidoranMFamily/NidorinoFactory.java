@@ -26,7 +26,7 @@ public class NidorinoFactory implements PoisonPokemonInterface {
         return true;
     }
 
-    public StoneType getEvolutionStone() {
-        return StoneType.MOON;
+    public List<StoneType> getEvolutionStone() {
+        return List.of(StoneType.MOON);
     }
 }
