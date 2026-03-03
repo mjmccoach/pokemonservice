@@ -28,7 +28,7 @@ public class WeepinbellFactory implements GrassPokemonInterface, PoisonPokemonIn
     }
 
     @Override
-    public StoneType getEvolutionStone() {
-        return StoneType.LEAF;
+    public List<StoneType> getEvolutionStone() {
+        return List.of(StoneType.LEAF);
     }
 }

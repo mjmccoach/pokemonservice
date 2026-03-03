@@ -46,6 +46,6 @@ class NidorinoFactoryTest {
 
     @Test
     void evolves_with_moonstone() {
-        assertEquals(StoneType.MOON, nidorinoFactory.getEvolutionStone());
+        assertEquals(StoneType.MOON, nidorinoFactory.getEvolutionStone().getFirst());
     }
 }

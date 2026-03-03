@@ -27,7 +27,7 @@ public class ShellderFactory implements WaterPokemonInterface {
     }
 
     @Override
-    public StoneType getEvolutionStone() {
-        return StoneType.WATER;
+    public List<StoneType> getEvolutionStone() {
+        return List.of(StoneType.WATER);
     }
 }

@@ -5,7 +5,8 @@ public enum StoneType {
     MOON("Moonstone"),
     FIRE("Firestone"),
     LEAF("Leafstone"),
-    WATER("Waterstone");
+    WATER("Waterstone"),
+    THUNDER("Thunderstone");
 
     private String value;
 

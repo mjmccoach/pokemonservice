@@ -42,6 +42,6 @@ class ClefairyFactoryTest {
     @Test
     void evolves_by_moonstone() {
         assertTrue(clefairyFactory.evolvesWithStone());
-        assertEquals(StoneType.MOON, clefairyFactory.getEvolutionStone());
+        assertEquals(StoneType.MOON, clefairyFactory.getEvolutionStone().getFirst());
     }
 }

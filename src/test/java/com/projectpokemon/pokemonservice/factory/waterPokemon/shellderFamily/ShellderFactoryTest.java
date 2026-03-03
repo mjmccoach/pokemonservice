@@ -37,6 +37,6 @@ class ShellderFactoryTest {
     @Test
     void evolves_with_waterstone() {
         assertTrue(shellderFactory.evolvesWithStone());
-        assertEquals(StoneType.WATER, shellderFactory.getEvolutionStone());
+        assertEquals(StoneType.WATER, shellderFactory.getEvolutionStone().getFirst());
     }
 }

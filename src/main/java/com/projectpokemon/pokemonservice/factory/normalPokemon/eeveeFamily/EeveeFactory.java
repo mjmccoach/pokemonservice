@@ -1,19 +1,19 @@
-package com.projectpokemon.pokemonservice.factory.poisonPokemon.nidoranFFamily;
+package com.projectpokemon.pokemonservice.factory.normalPokemon.eeveeFamily;
 
 import com.projectpokemon.pokemonservice.enums.StoneType;
-import com.projectpokemon.pokemonservice.factory.poisonPokemon.PoisonPokemonInterface;
+import com.projectpokemon.pokemonservice.factory.normalPokemon.NormalPokemonInterface;
 
 import java.util.List;
 
-public class NidorinaFactory implements PoisonPokemonInterface {
+public class EeveeFactory implements NormalPokemonInterface {
     @Override
     public String supports() {
-        return "Nidorina";
+        return "Eevee";
     }
 
     @Override
     public List<String> validEvolutions() {
-        return List.of("Nidoqueen");
+        return List.of("Flareon", "Jolteon", "Vaporeon");
     }
 
     @Override
@@ -26,7 +26,8 @@ public class NidorinaFactory implements PoisonPokemonInterface {
         return true;
     }
 
+    @Override
     public List<StoneType> getEvolutionStone() {
-        return List.of(StoneType.MOON);
+        return List.of(StoneType.FIRE, StoneType.THUNDER, StoneType.WATER);
     }
 }
