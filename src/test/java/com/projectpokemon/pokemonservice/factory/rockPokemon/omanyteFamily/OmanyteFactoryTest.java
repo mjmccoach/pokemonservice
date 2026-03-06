@@ -29,12 +29,12 @@ class OmanyteFactoryTest {
     }
 
     @Test
-    void has_no_valid_evolutions() {
+    void only_evolves_into_omastar() {
         assertEquals(OMASTAR, omanyteFactory.validEvolutions().getFirst());
     }
 
     @Test
-    void does_not_evolve_by_level() {
+    void evolves_at_level_40() {
         assertEquals(40, omanyteFactory.getEvolutionLevel());
     }
 }
