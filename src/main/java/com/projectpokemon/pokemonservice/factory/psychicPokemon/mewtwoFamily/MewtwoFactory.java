@@ -1,0 +1,22 @@
+package com.projectpokemon.pokemonservice.factory.psychicPokemon.mewtwoFamily;
+
+import com.projectpokemon.pokemonservice.factory.psychicPokemon.PsychicPokemonInterface;
+
+import java.util.List;
+
+public class MewtwoFactory implements PsychicPokemonInterface {
+    @Override
+    public String supports() {
+        return "Mewtwo";
+    }
+
+    @Override
+    public List<String> validEvolutions() {
+        return List.of();
+    }
+
+    @Override
+    public int getEvolutionLevel() {
+        return 0;
+    }
+}
