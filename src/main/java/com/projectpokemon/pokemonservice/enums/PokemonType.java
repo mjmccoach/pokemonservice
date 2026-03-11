@@ -16,7 +16,8 @@ public enum PokemonType {
     FLYING("flying"),
     ICE("ice"),
     NORMAL("normal"),
-    DRAGON("dragon");
+    DRAGON("dragon"),
+    STEEL("steel");
 
     private String value;
 
