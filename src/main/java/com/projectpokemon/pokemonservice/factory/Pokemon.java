@@ -1,5 +1,6 @@
 package com.projectpokemon.pokemonservice.factory;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
 import com.projectpokemon.pokemonservice.enums.StoneType;
 import org.apache.commons.lang3.NotImplementedException;
 
@@ -23,4 +24,10 @@ public interface Pokemon {
     default boolean evolvesWithTrade() {
         return false;
     }
+
+    default List<PokemonType> getResistances() {
+        throw new NotImplementedException();
+    }
+
+    ;
 }
