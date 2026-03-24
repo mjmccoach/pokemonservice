@@ -18,6 +18,7 @@ public enum PokemonType {
     NORMAL("normal"),
     DRAGON("dragon"),
     STEEL("steel"),
+    DARK("dark"),
     FAIRY("fairy");
 
     private String value;
