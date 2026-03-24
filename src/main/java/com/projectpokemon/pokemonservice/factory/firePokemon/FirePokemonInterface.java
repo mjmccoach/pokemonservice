@@ -11,6 +11,6 @@ public interface FirePokemonInterface extends Pokemon {
     }
 
     default List<PokemonType> getFireResistances() {
-        return List.of(PokemonType.FIRE, PokemonType.GRASS, PokemonType.ICE, PokemonType.BUG, PokemonType.ICE, PokemonType.FAIRY);
+        return List.of(PokemonType.FIRE, PokemonType.GRASS, PokemonType.ICE, PokemonType.BUG, PokemonType.STEEL, PokemonType.FAIRY);
     }
 }
