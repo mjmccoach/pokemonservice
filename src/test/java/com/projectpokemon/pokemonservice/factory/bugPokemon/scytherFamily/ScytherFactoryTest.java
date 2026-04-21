@@ -1,5 +1,6 @@
 package com.projectpokemon.pokemonservice.factory.bugPokemon.scytherFamily;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -34,5 +35,13 @@ class ScytherFactoryTest {
     @Test
     void does_not_evolve_by_level() {
         assertEquals(0, scytherFactory.getEvolutionLevel());
+    }
+
+    @Test
+    void has_resistances() {
+        assertEquals(3, scytherFactory.getBugPokemonResistances().size());
+        assertEquals(PokemonType.GRASS, scytherFactory.getBugPokemonResistances().getFirst());
+        assertEquals(PokemonType.FIGHTING, scytherFactory.getBugPokemonResistances().get(1));
+        assertEquals(PokemonType.GROUND, scytherFactory.getBugPokemonResistances().get(2));
     }
 }
