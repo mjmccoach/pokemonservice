@@ -6,7 +6,7 @@ import com.projectpokemon.pokemonservice.factory.Pokemon;
 import java.util.List;
 
 public interface BugPokemonInterface extends Pokemon {
-    default List<PokemonType> bugPokemonResistances() {
+    default List<PokemonType> getBugPokemonResistances() {
         return List.of(PokemonType.GRASS, PokemonType.FIGHTING, PokemonType.GROUND);
     }
 }
