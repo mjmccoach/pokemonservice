@@ -1,5 +1,6 @@
 package com.projectpokemon.pokemonservice.factory.dragonPokemon.dratiniFamily;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -34,5 +35,14 @@ class DragoniteFactoryTest {
     @Test
     void does_not_evolve_by_level() {
         assertEquals(0, dragoniteFactory.getEvolutionLevel());
+    }
+
+    @Test
+    void has_resistances() {
+        assertEquals(4, dragoniteFactory.getDragonResistances().size());
+        assertEquals(PokemonType.ELECTRIC, dragoniteFactory.getDragonResistances().getFirst());
+        assertEquals(PokemonType.FIRE, dragoniteFactory.getDragonResistances().get(1));
+        assertEquals(PokemonType.WATER, dragoniteFactory.getDragonResistances().get(2));
+        assertEquals(PokemonType.GRASS, dragoniteFactory.getDragonResistances().get(3));
     }
 }
