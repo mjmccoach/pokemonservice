@@ -1,5 +1,6 @@
 package com.projectpokemon.pokemonservice.factory.electricPokemon.pikachuFamily;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -40,5 +41,13 @@ class RaichuFactoryTest {
     @Test
     void does_not_evolve_with_thunderstone() {
         assertFalse(raichuFactory.evolvesWithThunderStone());
+    }
+
+    @Test
+    void has_resistances() {
+        assertEquals(3, raichuFactory.getElectricResistances().size());
+        assertEquals(PokemonType.ELECTRIC, raichuFactory.getElectricResistances().getFirst());
+        assertEquals(PokemonType.STEEL, raichuFactory.getElectricResistances().get(1));
+        assertEquals(PokemonType.FLYING, raichuFactory.getElectricResistances().get(2));
     }
 }
