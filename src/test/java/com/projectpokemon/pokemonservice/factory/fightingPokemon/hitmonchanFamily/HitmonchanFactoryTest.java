@@ -1,5 +1,6 @@
 package com.projectpokemon.pokemonservice.factory.fightingPokemon.hitmonchanFamily;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -34,5 +35,13 @@ class HitmonchanFactoryTest {
     @Test
     void does_not_evolve_by_level() {
         assertEquals(0, hitmonchanFactory.getEvolutionLevel());
+    }
+
+    @Test
+    void has_resistances() {
+        assertEquals(3, hitmonchanFactory.getFightingResistances().size());
+        assertEquals(PokemonType.BUG, hitmonchanFactory.getFightingResistances().getFirst());
+        assertEquals(PokemonType.ROCK, hitmonchanFactory.getFightingResistances().get(1));
+        assertEquals(PokemonType.DARK, hitmonchanFactory.getFightingResistances().get(2));
     }
 }
