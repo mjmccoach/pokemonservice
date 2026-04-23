@@ -46,7 +46,5 @@ class ArcanineFactoryTest {
         assertEquals(PokemonType.BUG, arcanineFactory.getFireResistances().get(3));
         assertEquals(PokemonType.STEEL, arcanineFactory.getFireResistances().get(4));
         assertEquals(PokemonType.FAIRY, arcanineFactory.getFireResistances().get(5));
-
-
     }
 }
