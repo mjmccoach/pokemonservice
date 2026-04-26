@@ -1,5 +1,6 @@
 package com.projectpokemon.pokemonservice.factory.groundPokemon.sandshrewFamily;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -34,5 +35,12 @@ class SandslashFactoryTest {
     @Test
     void has_no_evolution_level() {
         assertEquals(0, sandslashFactory.getEvolutionLevel());
+    }
+
+    @Test
+    void has_resistances() {
+        assertEquals(2, sandslashFactory.getGroundResistances().size());
+        assertEquals(PokemonType.POISON, sandslashFactory.getGroundResistances().getFirst());
+        assertEquals(PokemonType.ROCK, sandslashFactory.getGroundResistances().get(1));
     }
 }
