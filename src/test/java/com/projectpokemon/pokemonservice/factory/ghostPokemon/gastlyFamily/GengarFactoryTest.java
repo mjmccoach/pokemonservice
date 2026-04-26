@@ -1,5 +1,6 @@
 package com.projectpokemon.pokemonservice.factory.ghostPokemon.gastlyFamily;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -34,5 +35,12 @@ class GengarFactoryTest {
     @Test
     void does_not_evolve_by_level() {
         assertEquals(0, gengarFactory.getEvolutionLevel());
+    }
+
+    @Test
+    void has_resistances() {
+        assertEquals(2, gengarFactory.getGhostResistances().size());
+        assertEquals(PokemonType.POISON, gengarFactory.getGhostResistances().getFirst());
+        assertEquals(PokemonType.BUG, gengarFactory.getGhostResistances().get(1));
     }
 }
