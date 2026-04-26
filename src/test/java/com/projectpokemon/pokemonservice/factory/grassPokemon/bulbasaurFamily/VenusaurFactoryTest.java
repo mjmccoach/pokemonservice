@@ -1,5 +1,6 @@
 package com.projectpokemon.pokemonservice.factory.grassPokemon.bulbasaurFamily;
 
+import com.projectpokemon.pokemonservice.enums.PokemonType;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayNameGeneration;
 import org.junit.jupiter.api.DisplayNameGenerator;
@@ -40,5 +41,14 @@ class VenusaurFactoryTest {
     @Test
     void does_not_evolve_with_leafstone() {
         assertFalse(venusaurFactory.canEvolveWithLeafStone());
+    }
+
+    @Test
+    void has_resistances() {
+        assertEquals(4, venusaurFactory.getGrassResistances().size());
+        assertEquals(PokemonType.WATER, venusaurFactory.getGrassResistances().getFirst());
+        assertEquals(PokemonType.ELECTRIC, venusaurFactory.getGrassResistances().get(1));
+        assertEquals(PokemonType.GRASS, venusaurFactory.getGrassResistances().get(2));
+        assertEquals(PokemonType.GROUND, venusaurFactory.getGrassResistances().get(3));
     }
 }
